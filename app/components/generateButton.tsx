@@ -10,7 +10,7 @@ export default function GenerateButton() {
         console.log("Function not implemented")
     }
 
-    const [loading, isLoading] = useState(false);
+    const [loading] = useState(false);
 
   return (
     <motion.div 

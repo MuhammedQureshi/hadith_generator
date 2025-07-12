@@ -1,5 +1,4 @@
 'use client'
-import { div } from "framer-motion/client";
 import { useState } from "react"
 
 const categories = [
@@ -18,9 +17,8 @@ export default function SelectCategory() {
   return (
     <div className="w-full max-w-4xl flex-wrap flex mx-auto justify-center">
     {categories.map((category) => (
-        <div className="p-[0.15rem]">
+        <div className="p-[0.15rem]" key={category.id}>
         <button
-          key={category.id}
           onClick={() => setCurrentCategory(category.id)}
           className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
             currentCategory === category.id

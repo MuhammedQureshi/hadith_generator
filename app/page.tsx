@@ -1,5 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { Copy, Share2, Heart, RefreshCw } from 'lucide-react';
 
 import SelectCategory from './components/selectCategory';
 import GenerateButton from './components/generateButton';
