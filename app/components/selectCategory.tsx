@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react"
+import { Dispatch, SetStateAction } from "react";
 
 const categories = [
     { id: 'all', name: 'All', color: 'from-emerald-500 to-teal-500' },
@@ -11,13 +11,16 @@ const categories = [
     { id: 'family', name: 'Family', color: 'from-green-500 to-emerald-500' }
   ];
 
-export default function SelectCategory() {
-    const [currentCategory, setCurrentCategory] = useState<string>('all');
-    console.log(currentCategory);
+interface SelectCategoryProps {
+  currentCategory: string;
+  setCurrentCategory: Dispatch<SetStateAction<string>>;
+}
+
+export default function SelectCategory({ currentCategory, setCurrentCategory }: SelectCategoryProps) {
   return (
     <div className="w-full max-w-4xl flex-wrap flex mx-auto justify-center">
     {categories.map((category) => (
-        <div className="p-[0.15rem]" key={category.id}>
+        <div className="p-[0.20rem]" key={category.id}>
         <button
           onClick={() => setCurrentCategory(category.id)}
           className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
