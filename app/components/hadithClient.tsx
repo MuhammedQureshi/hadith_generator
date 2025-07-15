@@ -5,9 +5,17 @@ import GenerateButton from "./generateButton";
 import Hadiths from "./hadiths";
 import { hadiths } from "@/data";
 
+// Define Hadith type for type safety
+type Hadith = {
+  id: string;
+  text: string;
+  reference: string;
+  category: string;
+};
+
 export default function HadithGeneratorClient() {
   const [currentCategory, setCurrentCategory] = useState<string>("all");
-  const [currentHadith, setCurrentHadith] = useState<any>(null);
+  const [currentHadith, setCurrentHadith] = useState<Hadith | null>(null);
 
   function generateHadith() {
     const categoryHadiths = hadiths[currentCategory] || hadiths["all"];

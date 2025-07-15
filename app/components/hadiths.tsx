@@ -13,7 +13,7 @@ interface HadithsProps {
 
 export default function Hadiths({ currentHadith }: HadithsProps) {
   if (!currentHadith) {
-    return <div className="text-center text-slate-400 mt-6">Click "Generate Hadith" to see a hadith.</div>;
+    return <div className="text-center text-slate-400 mt-6">Click &quot;Generate Hadith&quot; to see a hadith.</div>;
   }
   return (
     <div className="mt-6 text-center bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8 min-h-[300px] flex flex-col justify-center relative">
